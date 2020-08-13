@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+{% include "Superior/barra.html" %}
+
+<h1 style="color: red">
+    <p>Hola Dani, estamos creando la primera página de django</p>
+</h1>
+{# No temas , es una prueba#}
+{% comment %} Ten cuidado
+con este comentario
+{% endcomment %}
+
+
+
+
+
+{% if nombre_persona == "Profesor Juan" %}
+   <p>El curso lo imparte el profesor titular</p>
+
+{% else %}
+   <p>El curso lo imparte el profesor suplente</p>
+{% endif %}
+
+<p style="color: blue">El nombre del profesor es: {{nombre_persona}} {{apellidos}}</p>
+<p>Estamos viendo las plantillas a dia : {{momento_actual}}</p>
+<p><strong>Temas del curso: </strong></p>
+<p>
+    <ul>
+    {% if temas %}
+     {% for elTema in temas %}
+      <li>{{elTema}}</li>
+
+     {% endfor %}
+    {% else %}
+       <p>No hay elementos que mostrar</p>
+    {% endif %}
+</ul>
+</p>
+</body>
+</html>
